@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Consumo</title>
+</head>
+<body>
+    <style>
+        *{
+            background: black;
+            color: white;
+        }
+    </style>
+    <h3>¿Alcohol o gasolina?</h3>
+    <br>
+    <script>
+        let tanqueLleno = 40;
+
+        let kilometrosGasolina = 480;
+        let eficienciaGasolina = kilometrosGasolina/tanqueLleno;
+
+        let kilometrosAlcohol = 300;
+        let eficienciaAlcohol = kilometrosAlcohol/tanqueLleno;
+
+        let nombre1 = "gasolina";
+        let nombre2 = "alcohol";
+
+
+        document.write(`La eficiencia del vehivculo recorre ${eficienciaGasolina} kilometros por litro de ${nombre1}`);
+        document.write("<br>");
+        document.write("<br>");
+        document.write(`La eficiencia del vehivculo recorre ${eficienciaAlcohol} kilometros por litro de ${nombre2}`);
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esta flor es para ti</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    
+    <script>
+
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400);
+
+        function drawCircle(x, y, radio, color){
+
+            pincel.fillStyle = color;
+            pincel.beginPath();
+            pincel.arc(x, y, radio, 0, 2*3.14);
+            pincel.fill();
+        }
+
+        //ejercicio que dejaron ya quedo resuleto al pie de la letra
+
+        function drawFlower (x,y) { 
+
+        drawCircle(x, y, 10, "red");
+        drawCircle(x, y-20, 10, "yellow");
+        drawCircle(x-20, y, 10, "orange");
+        drawCircle(x, y+20, 10, "blue");
+        drawCircle(x+20, y, 10, "black");
+
+        }
+
+        drawFlower(300,100);
+
+
+        // // mi diseño
+        // drawCircle(300, 140, 35, "black");
+        // drawCircle(300, 260, 35, "black");
+        // drawCircle(240, 200, 35, "black");
+        // drawCircle(360, 200, 35, "black");
+        // //esquineras
+        // drawCircle(335, 165, 35, "black");
+        // drawCircle(335, 235, 35, "black");
+        // drawCircle(265, 235, 35, "black");
+        // drawCircle(265, 165, 35, "black");
+        // // esquineros relleno
+        // drawCircle(335, 165, 33.25, "#BB55D5");
+        // drawCircle(335, 235, 33.25, "#BB55D5");
+        // drawCircle(265, 235, 33.25, "#BB55D5");
+        // drawCircle(265, 165, 33.25, "#BB55D5");
+        // // relleno de centros
+        // drawCircle(300, 140, 33.25, "lightblue");
+        // drawCircle(300, 260, 33.25, "lightblue");
+        // drawCircle(240, 200, 33.25, "lightblue");
+        // drawCircle(360, 200, 33.25, "lightblue");
+        // //centro
+        // drawCircle(300, 200, 45, "black");
+        // drawCircle(300, 200, 42.75, "yellow");
+
+        
+
+
+    </script>
+    
+</body>
+</html>

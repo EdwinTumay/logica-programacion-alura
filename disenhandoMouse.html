@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñando con el Mouse</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+    var lienzo = document.querySelector('canvas');
+    var pincel = lienzo.getContext('2d');
+
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+    var bh = 50;
+    var colores = ["red", "green", "blue"];
+    var iActual = 2;
+    var xCuadro1 = 25;
+    var xCuadro2 = 75;
+    var xCuadro3 = 125;
+    var yCuadro = 25;
+
+
+    function dibujarCuadrado (x,y,base,altura,color){
+        pincel.fillStyle = color;
+        pincel.fillRect(x,y,base,altura);
+        pincel.fill();
+    }
+
+    dibujarCuadrado(0,0,bh,bh, colores[0]);
+    dibujarCuadrado(50,0,bh,bh, colores[1]);
+    dibujarCuadrado(100,0,bh,bh, colores[2]);
+
+    function dibujarCirculo(x,y) {
+
+        if(puedoDibujar) {
+            pincel.fillStyle = colores[iActual];
+            pincel.beginPath();
+            pincel.arc(x, y, 5, 0, 2 * 3.14);
+            pincel.fill();
+        }
+
+    }
+
+
+    function alterarColor(evento) {
+        var x = evento.pageX - lienzo.offsetLeft;
+        var y = evento.pageY - lienzo.offsetTop;
+
+        if((x < xCuadro1 + 25) && (x > xCuadro1 - 25)&&(y < yCuadro + 25)&&(y > yCuadro - 25)){
+            console.log(x,y);
+            iActual = 0;
+        }
+        else if ((x < xCuadro2 + 25) && (x > xCuadro2 - 25)&&(y < yCuadro + 25)&&(y > yCuadro - 25) ){
+            console.log(x,y);
+            iActual = 1;
+        }
+        else if ((x < xCuadro3 + 25) && (x > xCuadro3 - 25)&&(y < yCuadro + 25)&&(y > yCuadro - 25)){
+            console.log(x,y);
+            iActual = 2;
+        }
+
+    }
+    lienzo.onclick = alterarColor;
+
+    lienzo.onmousemove = dibujarCirculo;
+
+    function habilitarDibujar(evento) {
+        var x = evento.pageX - lienzo.offsetLeft;
+        var y = evento.pageY - lienzo.offsetTop;
+        if ((x < xCuadro1 + 130) && (x > xCuadro1 - 25)&&(y < yCuadro + 30)&&(y > yCuadro - 30)){
+            puedoDibujar = false;
+        }
+        else{
+            puedoDibujar = true;
+        }
+        
+    }
+
+    function deshabilitarDibujar() {
+
+        puedoDibujar = false;
+    }
+    // para no dibujar en la paleta 
+    function AreaPaleta(xCoordenada,yCoordenada){
+
+        if ((xCoordenada >= 0 && xCoordenada < (3*bh + 5)) && 
+            (yCoordenada >= 0 && yCoordenada < (bh + 5))) {
+
+            return false;
+
+
+        } else{
+
+                return true;
+
+            }
+
+    }   
+
+    // se obtiene el movimeinto del mouse para no  dibujar fuera del area de la paleta
+
+    function movimientoDelMouse(evento){
+
+        var x = evento.pageX - lienzo.offsetLeft;
+        var y = evento.pageY - lienzo.offsetTop;
+
+        if (AreaPaleta(x,y)){
+
+                dibujarCirculo(x,y);
+
+        }
+
+    }
+
+    lienzo.onmousemove = movimientoDelMouse;
+    lienzo.onmousedown = habilitarDibujar;
+    lienzo.onmouseup = deshabilitarDibujar;
+
+
+
+//https://github.com/alura-cursos/logica_programacion_parte3/tree/aula5 
+// todos los proyectos realizados en logica de programacion  parte 3
+</script>
+</body>
+</html>

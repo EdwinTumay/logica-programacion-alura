@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster cara Creeper</title>
+</head>
+<body>
+    <canvas width="650" height="400" style="background: white";></canvas>
+
+    <script>
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+
+        // cabeza
+        pincel.fillStyle = "darkgreen";
+        pincel.moveTo(125, 50);
+        pincel.lineTo(125, 350);
+        pincel.lineTo(475, 350);
+        pincel.lineTo(475, 50);
+        pincel.fill();
+
+
+        // pincel.fillStyle = "red";
+        // pincel.fillRect(300, 0, 600, 400);
+        // pincel.fillStyle = "blue";
+        // pincel.fillRect(0, 0, 300, 400);
+
+
+        // Ojos
+        // izquierdo
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(175, 110);
+        pincel.lineTo(175, 200);
+        pincel.lineTo(265, 200);
+        pincel.lineTo(265, 110);
+        pincel.fill();
+        // derecho
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(335, 110);
+        pincel.lineTo(335, 200);
+        pincel.lineTo(425, 200);
+        pincel.lineTo(425, 110);
+        pincel.fill();
+
+        // nariz
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(265, 200);
+        pincel.lineTo(265, 300);
+        pincel.lineTo(335, 300);
+        pincel.lineTo(335, 200);
+        pincel.fill();
+
+        // parte de la boca
+        // izquierda
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(225, 240);
+        pincel.lineTo(225, 350);
+        pincel.lineTo(265, 350);
+        pincel.lineTo(265, 240);
+        pincel.fill();
+
+        // derecha
+        pincel.fillStyle = "black";
+        pincel.beginPath();
+        pincel.moveTo(335, 240);
+        pincel.lineTo(335, 350);
+        pincel.lineTo(375, 350);
+        pincel.lineTo(375, 240);
+        pincel.fill();
+
+
+        // solucion profesor
+        //cabeza
+        // pincel.fillStyle = 'darkgreen';
+        // pincel.fillRect(200, 50, 350 ,300);
+        // //ojos
+        // pincel.fillStyle = 'black';
+        // pincel.fillRect(250, 110, 90, 90);
+        // pincel.fillRect(410, 110, 90, 90);
+        // //nariz
+        // pincel.fillRect(340, 200, 70, 100);
+        //  //boca
+        // pincel.fillRect(300, 240, 40, 110);
+        // pincel.fillRect(410, 240, 40, 110);
+
+
+
+
+    </script>
+    
+</body>
+</html>

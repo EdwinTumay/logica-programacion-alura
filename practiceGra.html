@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicando el graficado utilizando for o while</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+
+        function drawRect(x, y, base, altura, color){ //function para hacer los restangulos
+            var lienzo = document.querySelector("canvas");
+            var pincel = lienzo.getContext("2d");
+
+            pincel.fillStyle = color;
+            pincel.fillRect(x, y, base, altura);
+            pincel.strokeStyle = "black";
+            pincel.strokeRect(x, y, base, altura);
+        }
+
+        function textWrite(x, y, texto){
+            var lienzo = document.querySelector("canvas");
+            var pincel = lienzo.getContext("2d");
+
+            pincel.font = "15px Georgia";
+            pincel.fillStyle = "black";
+            pincel.fillText(texto, x, y);
+        }
+
+        var serie1 = [10, 25, 15, 30, 20];
+        var serie2 = [20, 20, 20, 20, 20];
+        var serie3 = [10,15,25,50];
+        var colores = ["red", "orange", "yellow", "green", "blue"];
+
+
+        function drawBar(x, y, serie, colores, texto){
+            textWrite(x, y-15, texto);
+
+            var sumAltura = 0;
+            var i = 0;
+
+            while (i < serie.length){
+                var altura = serie[i];
+                drawRect(x, y + sumAltura, 50, altura, colores[i]);
+                sumAltura += altura;
+                i++;
+            }
+
+
+        }
+
+        drawBar(50, 50, serie1, colores, "One");
+        drawBar(150, 50, serie2, colores, "Two");
+        drawBar(250, 50, serie3, colores, "Three");
+
+
+
+
+
+    </script>
+
+</body>
+</html>

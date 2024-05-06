@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Edades</title>
+</head>
+<div><h1>Programa para dar la media de las edades de la familia</h1></div>
+<body>
+    <style>
+        *{
+            background: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        };
+    
+        function imprimir(frase){
+    
+            document.write(frase);
+            saltarLinea();
+        }
+
+        let numeroMienbros = parseInt(prompt(`Ingrese la cantidad de mienbros de su familia`));
+        let contador = 1;
+        let totalEdades = 0;
+
+        while(contador <= numeroMienbros){
+
+            edad = parseInt(prompt(`Ingrese la edad del familiar`));
+            totalEdades = totalEdades + edad;
+            contador++;
+
+        }
+
+        let mediaEdades = totalEdades / numeroMienbros;
+
+        imprimir(`La media de los edades de la familia es ${mediaEdades}`);
+        imprimir("Fin");
+
+        </script>
+</body>
+</html>

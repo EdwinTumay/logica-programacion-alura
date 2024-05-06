@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación Contraseña</title>
+</head>
+<body>
+    
+<script>
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+    let contador = 1;
+    let intentos = 3;
+   
+
+    while(contador <= intentos){
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            // contador = intentos;
+            break;
+        } else {
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+    }
+        if(contador === 3){
+            alert("Usted no es el dueño de esta cuenta")
+
+        }
+        contador++;
+    };
+
+
+
+    
+</script>
+</body>
+</html>

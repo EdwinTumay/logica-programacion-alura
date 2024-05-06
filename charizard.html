@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pixel Charizard</title>
+</head>
+<body>
+    <canvas width="600" height="600"></canvas>
+    <script>
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+        var b = 10;
+        var h = 10;
+
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,600);
+        //contorno negro
+        pincel.fillStyle = "black";
+        pincel.fillRect(280,210,b*4,h*3);
+        pincel.fillRect(270,190,b,h*3);
+        pincel.fillRect(260,180,b,h);
+        pincel.fillRect(250,190,b,h*6);
+        pincel.fillRect(250,250,b*2,h);
+        pincel.fillRect(240,260,b*2,h*5);
+        pincel.fillRect(250,310,b,h);
+        pincel.fillRect(240,320,b,h*2);
+        pincel.fillRect(230,340,b,h*2);
+        pincel.fillRect(220,350,b,h*3);
+        pincel.fillRect(230,380,b,h*2);
+        pincel.fillRect(260,380,b,h);
+        pincel.fillRect(270,390,b,h);
+        pincel.fillRect(240,400,b*9,h);
+        
+        pincel.fillRect(290,340,b*2,h);
+        pincel.fillRect(320,390,b,h);
+        pincel.fillRect(330,380,b,h);
+        pincel.fillRect(330,410,b*3,h);
+        pincel.fillRect(360,390,b,h*2);
+        pincel.fillRect(370,360,b,h*3);
+        pincel.fillRect(360,340,b,h*2);
+        pincel.fillRect(350,320,b,h*2);
+        pincel.fillRect(340,310,b,h);
+        pincel.fillRect(340,260,b*2,h*5);
+        pincel.fillRect(330,250,b*2,h);
+        pincel.fillRect(340,190,b,h*6);
+        pincel.fillRect(330,180,b,h);
+        pincel.fillRect(320,190,b,h*3);
+
+        //relleno naranja
+        pincel.fillStyle = "#ee8329";
+        pincel.fillRect(260,190,b,h*6);
+        pincel.fillRect(270,220,b,h*4);
+        pincel.fillRect(290,220,b*2,h*2);
+        pincel.fillRect(280,240,b*4,h*2);
+        pincel.fillRect(320,220,b,h*4);
+        pincel.fillRect(330,190,b,h*6);
+        pincel.fillRect(260,260,b*8,h*6);
+        pincel.fillRect(250,270,b,h*3);
+        pincel.fillRect(340,270,b,h*3);
+        pincel.fillRect(270,320,b*6,h);
+        pincel.fillRect(290,330,b*2,h);
+        pincel.fillRect(240,340,b,h*2);
+      
+        
+
+        pincel.fillRect(250,320,b,h*3);
+        pincel.fillRect(260,330,b,h);
+        pincel.fillRect(230,360,b,h);
+        pincel.fillRect(240,370,b*2,h*2);
+        pincel.fillRect(340,320,b,h*3);
+        pincel.fillRect(330,330,b,h);
+        pincel.fillRect(350,340,b,h*2);
+        pincel.fillRect(360,360,b,h*2);
+        pincel.fillRect(340,370,b*2,h*2);
+        // alas naranja
+        //derecha
+        pincel.fillRect(370,250,b,h*2);
+        pincel.fillRect(390,260,b,h);
+        pincel.fillRect(400,270,b,h);
+        pincel.fillRect(410,280,b,h*2);
+        pincel.fillRect(420,300,b,h*2);
+        //izquierda
+        pincel.fillRect(220,250,b,h*2);
+        pincel.fillRect(200,260,b,h);
+        pincel.fillRect(190,270,b,h);
+        pincel.fillRect(180,280,b,h*2);
+        pincel.fillRect(170,300,b,h*2);
+
+        // cafe detalles
+        pincel.fillStyle = "#A55D28";
+        pincel.fillRect(260,320,b,h);
+        pincel.fillRect(270,330,b,h);
+        pincel.fillRect(280,340,b,h);
+        pincel.fillRect(260,340,b,h);
+        pincel.fillRect(250,350,b,h*2);
+        pincel.fillRect(240,360,b,h);
+        pincel.fillRect(230,370,b,h);
+        pincel.fillRect(240,390,b*3,h);
+
+        pincel.fillRect(330,320,b,h);
+        pincel.fillRect(320,330,b,h);
+        pincel.fillRect(310,340,b,h);
+        pincel.fillRect(330,340,b,h);
+        pincel.fillRect(340,350,b,h*2);
+        pincel.fillRect(350,360,b,h);
+        pincel.fillRect(360,380,b,h);
+        pincel.fillRect(330,390,b*3,h*2);
+        // alas cafes
+        //izq
+        pincel.fillRect(230,240,b,h*6);
+        pincel.fillRect(220,240,b,h);
+        pincel.fillRect(220,270,b,h);
+        pincel.fillRect(210,250,b,h*2);
+        pincel.fillRect(200,250,b,h);
+        pincel.fillRect(190,260,b,h);
+        pincel.fillRect(180,270,b,h);
+        pincel.fillRect(170,280,b,h*2);
+        pincel.fillRect(160,300,b,h*3);
+        pincel.fillRect(170,320,b,h);
+        pincel.fillRect(180,300,b,h);
+        //derecha
+        pincel.fillRect(360,240,b,h*6);
+        pincel.fillRect(370,240,b,h);
+        pincel.fillRect(370,270,b,h);
+        pincel.fillRect(380,250,b,h*2);
+        pincel.fillRect(390,250,b,h);
+        pincel.fillRect(400,260,b,h);
+        pincel.fillRect(410,270,b,h);
+        pincel.fillRect(420,280,b,h*2);
+        pincel.fillRect(430,300,b,h*3);
+        pincel.fillRect(420,320,b,h);
+        pincel.fillRect(410,300,b,h);
+        // barriga
+        pincel.fillStyle = "#E8CE23";
+        pincel.fillRect(270,340,b,h);
+        pincel.fillRect(320,340,b,h);
+        pincel.fillRect(260,350,b*8,h*3);
+        pincel.fillRect(270,380,b*6,h);
+        pincel.fillRect(280,390,b*4,h);
+
+        // azul
+        pincel.fillStyle = "#1A73EC";
+        pincel.fillRect(220,280,b,h);
+        pincel.fillRect(210,290,b*2,h)
+        pincel.fillRect(200,300,b*4,h);
+        pincel.fillRect(180,310,b*7,h);
+        pincel.fillRect(210,320,b*3,h);
+
+        pincel.fillRect(270,290,b,h);
+        pincel.fillRect(320,290,b,h);
+
+        pincel.fillRect(370,280,b,h);
+        pincel.fillRect(370,290,b*2,h)
+        pincel.fillRect(360,300,b*4,h);
+        pincel.fillRect(350,310,b*7,h);
+        pincel.fillRect(360,320,b*3,h);
+
+        // detalles azul claro  
+        pincel.fillStyle = "#7FB0F1";
+        pincel.fillRect(210,270,b,h*2);
+        pincel.fillRect(200,270,b,h*3);
+        pincel.fillRect(190,280,b,h*3);
+
+        pincel.fillRect(380,270,b,h*2);
+        pincel.fillRect(390,270,b,h*3);
+        pincel.fillRect(400,280,b,h*3);
+
+        pincel.fillRect(270,280,b,h);
+        pincel.fillRect(320,280,b,h);
+        pincel.fillRect(280,330,b,h);
+        pincel.fillRect(310,330,b,h);
+        pincel.fillRect(330,400,b,h);
+        pincel.fillRect(350,400,b,h);
+        
+        pincel.fillStyle = "white";
+        pincel.fillRect(260,270,b,h*2);
+        pincel.fillRect(330,270,b,h*2)
+    </script>
+</body>
+</html>

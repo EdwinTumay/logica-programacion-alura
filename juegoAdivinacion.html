@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinación</title>
+</head>
+<body>
+    <b>Adivinaste?</b>
+    <br>
+    <br>
+    <style>
+        *{
+            background: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        };
+    
+        function imprimir(frase){
+    
+            document.write(frase);
+            saltarLinea();
+        }
+
+        // juego de adivinanza
+
+        let numeroSorpresa = Math.round(Math.random()*10);
+        let intentos = 3;
+        let contador = 1;
+
+        while (contador <= intentos) {
+
+            var numeroJugador = parseInt(prompt("Ingrese un número entre 0 - 10"));
+
+            if(numeroSorpresa === numeroJugador){
+
+                alert(`Felicitaciones usted acertó, en el intento ${contador} el número pensado era ${numeroSorpresa}`);
+                break;
+            }
+            
+            else {
+
+                alert(`Usted se equivocó`);
+
+            }
+            contador++;
+        }
+
+        if(numeroSorpresa === numeroJugador){
+
+            imprimir(`Felicitaciones usted acertó, en el intento ${contador} el número pensado era ${numeroSorpresa}`);
+
+        }
+        
+        else {
+
+            imprimir(`Usted se equivocó, el numero a adivinar era ${numeroSorpresa} `);
+
+        }
+
+        imprimir("FIN");
+
+
+        // Ejercicio de edad y licencia
+        // let edad = parseInt(prompt("¿Cuál es tu edad?"));
+        // let tieneLicencia = prompt("¿Tienes licencia? Responde S o N");
+        
+        // if(edad >= 18 && (tieneLicencia == "S" || tieneLicencia == "s")){
+            
+        //     imprimir(`Puedes conducir`);
+        // }
+        // else if(edad < 18){
+
+        //     imprimir(`No puedes conducir eres menor de 18, tienes ${edad} `);
+        // }
+        // else if(edad >= 18 && (tieneLicencia == "N" || tieneLicencia == "n")){
+
+        //     imprimir(`No puedes conducir no tienes licencia para conducir`);
+        // }
+        // else{
+        //     imprimir(`No puedes conducir no tienes ni edad, ni licencia`);
+        // }
+
+
+
+    // resultado del Profesor
+    // if(edad >= 18) {
+    //     if(tieneLicencia == "S") {
+    //         imprimir("Puedes conducir");
+    //     }
+    // }
+
+    // if(edad < 18) {
+    //     imprimir("No puedes conducir");
+    // }
+    </script>    
+
+
+
+
+</body>
+</html>

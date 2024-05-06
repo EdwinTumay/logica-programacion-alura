@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practica</title>
+</head>
+<body>
+
+    <style>
+        
+        .btn-div {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background: #1a0321;
+            font-family: consolas;
+        }
+
+    </style>
+        <div class="btn-div">
+            <input type="text" placeholder="Nombre"/>
+            <button>Agregar</button>
+        </div>
+    <script>
+        
+        var familiares = [];
+        var cantidad = parseInt(prompt("Cuantos familiares son?"));
+        var contador = 1;
+        var input = document.querySelector("input");
+        var button = document.querySelector("button");
+
+        input.focus();
+        input.value="";
+        function verificar (){
+
+        while(contador <= cantidad) {
+            var familiar = input.value; //prompt("Agrege el familiar " + contador);
+            var encontrado = false;
+
+            for( var posicion = 0; posicion < familiares.length; posicion++){
+                if(familiar == familiares[posicion]){ // =!familiares[posicion]
+                    encontrado = true; // false
+                    alert(`repetido ${familiar} vuelva a ingresar uno nuevo`)// quitar
+                }
+            }
+
+            if(!encontrado){
+
+            familiares.push(input.value);
+            contador++;
+
+            }
+            input.value = "";
+            input.focus();
+            break;
+        } 
+            console.log(familiares);   
+        }
+
+        button.onclick = verificar;
+       
+        if(!verificar){
+            alert(familiares);
+        }
+
+
+
+
+
+
+
+
+        // arbol de navidad en cosole.log
+        // function arbolNavidad (numero){
+        //     let numeroRows = numero;
+       
+
+        //     for(let lineas = 1; lineas <= numeroRows; lineas++){
+        //         let row = "";
+        //         for(let columnas = lineas; columnas < numeroRows; columnas++){
+        //             row += " "; 
+        //         }
+        //         for(let dibujo = 1; dibujo <= (2 * lineas - 1); dibujo++){
+        //             row += "*"
+        //         }
+
+        //         console.log(row);
+        //         document.write(row + "<br>")
+        //     }
+        //     saltarLinea();
+        // }
+
+
+        // arbolNavidad(10);
+
+    </script>
+
+    
+</body>
+</html>

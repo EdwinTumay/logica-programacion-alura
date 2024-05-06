@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Game</title>
+</head>
+<body>
+    <style>
+        div{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background: #1d0db682;
+            
+
+        }
+    </style>
+    <div>
+        <input type="number" placeholder="Escribe tu número"/>
+        <button>Verifica el secreto</button>
+    </div>
+    <script>
+
+        function aleatorio (){
+
+            return Math.round(Math.random()*10);
+
+        }
+
+        function sortearNumeros(cantidad){
+
+            var secret = [];
+            var counter = 1;
+
+
+            while(counter <= cantidad ){
+
+                var numeroAleatorio = aleatorio();
+                console.log(numeroAleatorio);
+                var encontrado = false;
+
+                if(numeroAleatorio != 0){
+                    for( var posicion = 0; posicion < secret.length; posicion++){
+                        if( numeroAleatorio == secret[posicion]){
+                            encontrado = true;
+                            break;
+                        }
+                    
+                    }
+                    if(encontrado == false){
+                        secret.push(numeroAleatorio);
+                        counter++
+                    }
+                
+                }
+
+            }
+
+            return secret
+        }
+       
+        var secret = sortearNumeros(4);
+        console.log(secret);
+
+        var input = document.querySelector("input");
+        input.focus();
+
+
+        function verificar (){
+
+            var encontrado = false;
+
+           for(var position = 0; position < secret.length; position++){
+            //position < 4 o position < secret.length     es la cantida de caracterees o cosas que anidan 
+                if(input.value == secret[position]){
+                    alert("Usted acertó");
+                    encontrado = true;
+                    break;
+                }
+            }
+               
+            if(encontrado == false){
+                alert("Usted erró");
+            }
+
+            input.value = "";
+            input.focus();
+        }
+        var button = document.querySelector("button");
+        button.onclick = verificar;
+
+
+        // juego de superman 
+
+        // var heroes = ["Superman", "Thor", "Batman", "Mujer Maravilla"];
+
+        // for( var i = 0; i < heroes.length; i++) {
+        // alert(heroes[i]);
+        // }
+
+    </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador 1 a 100 en pares</title>
+</head>
+<body>
+    
+    <style>
+        *{
+            background: black;
+            color: white;
+        }
+    </style>
+    <script>
+        function saltarLinea(){
+            document.write("<br>");
+            document.write("<br>");
+            document.write("<br>");
+        };
+    
+        function imprimir(frase){
+    
+            document.write(frase);
+            saltarLinea();
+        }
+
+        // metodo   WHILE
+        let inicial = 2;
+
+        while(inicial <= 100){
+
+            imprimir(inicial);
+            inicial = inicial + 2;
+
+        }
+
+        // metodO FOR
+        // for(let inicial = 0; inicial <= 100; inicial = inicial +2){
+        
+        //     imprimir(inicial);
+        
+        // }
+
+        imprimir("Fin");
+
+
+    </script> 
+</body>
+</html>

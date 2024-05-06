@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 3</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        var lienzo = document.querySelector("canvas");
+        var pincel = lienzo.getContext("2d");
+        var colores = ["blue", "red", "green"]
+        var iActual = 0;
+
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0,0,600,400);
+        
+        function exibirUsuario (evento){
+            var x = evento.pageX - lienzo.offsetLeft;
+            var y = evento.pageY - lienzo.offsetTop;
+            console.log(evento);
+            alert(`${x}, ${y}`);
+
+        }
+
+        function drawCricle (evento){
+            var x = evento.pageX - lienzo.offsetLeft;
+            var y = evento.pageY - lienzo.offsetTop;
+
+            pincel.fillStyle = colores[iActual];
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2*3.14);
+            pincel.fill();
+
+        }
+        // lienzo.onclick = exibirUsuario;
+        lienzo.onclick = drawCricle;
+
+        function alterarColor() {
+        
+            iActual++
+            if(iActual >= colores.length){
+                iActual = 0;
+            }
+            return false;
+        }
+       
+
+        lienzo.oncontextmenu = alterarColor;
+
+        // forma de manejar mejor un if si se mete  algo ya que este definido como verdadero
+        // var aprendi = true;
+
+        // if(aprendi){
+        //     alert("Si he aprendido");
+        // }
+        // else{
+        //     alert("Chinga su madre no se ni vergas");
+        //     }
+
+
+    </script>
+</body>
+</html>
